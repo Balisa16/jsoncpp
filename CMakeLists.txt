@@ -33,7 +33,7 @@ add_library(${PROJECT_NAME} SHARED
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/release)
 
 add_executable(test_strunner src/jsontestrunner/main.cpp)
-target_link_libraries(test_strunner PRIVATE ${PROJECT_NAME})
+target_link_libraries(test_strunner PUBLIC ${PROJECT_NAME})
 
 
 set(INSTALL_LIB_DIR lib CACHE PATH "/usr/local/lib")

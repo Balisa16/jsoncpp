@@ -7,7 +7,7 @@
 #define JSON_FEATURES_H_INCLUDED
 
 #if !defined(JSON_IS_AMALGAMATION)
-#include "forwards.h"
+#include <forwards.hpp>
 #endif // if !defined(JSON_IS_AMALGAMATION)
 
 #pragma pack(push)

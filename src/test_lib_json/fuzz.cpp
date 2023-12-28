@@ -6,8 +6,8 @@
 #include "fuzz.h"
 
 #include <cstdint>
-#include <json/config.h>
-#include <json/json.h>
+#include <config.hpp>
+#include <json.hpp>
 #include <memory>
 #include <string>
 

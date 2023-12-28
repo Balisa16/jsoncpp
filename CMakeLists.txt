@@ -63,9 +63,18 @@ project(jsoncpp
 
 set(PROJECT_SOVERSION 25)
 
+include_directories(${PROJECT_SOURCE_DIR}/include)
 
-add_subdirectory(src)
+add_library(JSON_CPP STATIC
+    lib/json_value.cc
+    lib/json_reader.cc
+    lib/json_writer.cc)
 
-add_subdirectory(include)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/release)
 
-add_subdirectory(example)
+add_executable(test_strunner src/jsontestrunner/main.cpp)
+target_link_libraries(test_strunner PRIVATE JSON_CPP)
+
+# add_subdirectory(src)
+
+# add_subdirectory(example)

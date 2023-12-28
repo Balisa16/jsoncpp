@@ -16,7 +16,9 @@
 #include <algorithm> // sort
 #include <cstdio>
 #include <iostream>
-#include <json/json.h>
+#include <features.hpp>
+#include <config.hpp>
+#include <json.hpp>
 #include <memory>
 #include <sstream>
 

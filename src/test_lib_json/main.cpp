@@ -10,8 +10,8 @@
 #pragma warning(disable : 4996)
 #endif
 
-#include "fuzz.h"
-#include "jsontest.h"
+#include <fuzz.h>
+#include "jsontest.hpp"
 #include <algorithm>
 #include <cmath>
 #include <cstring>
@@ -19,8 +19,8 @@
 #include <iomanip>
 #include <iostream>
 #include <iterator>
-#include <json/config.h>
-#include <json/json.h>
+#include <config.hpp>
+#include <json.hpp>
 #include <limits>
 #include <memory>
 #include <sstream>

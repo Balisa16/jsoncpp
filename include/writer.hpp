@@ -7,7 +7,7 @@
 #define JSON_WRITER_H_INCLUDED
 
 #if !defined(JSON_IS_AMALGAMATION)
-#include "value.h"
+#include <value.hpp>
 #endif // if !defined(JSON_IS_AMALGAMATION)
 #include <ostream>
 #include <string>

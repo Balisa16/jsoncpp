@@ -3,19 +3,33 @@
 // recognized in your jurisdiction.
 // See file LICENSE for detail or copy at http://jsoncpp.sourceforge.net/LICENSE
 
+#include <cmath>
+#include <iostream>
 #if !defined(JSON_IS_AMALGAMATION)
-#include <json/assertions.h>
-#include <json/value.h>
-#include <json/writer.h>
+#include <assertions.hpp>
+#include <value.hpp>
+#include <writer.hpp>
 #endif // if !defined(JSON_IS_AMALGAMATION)
 #include <algorithm>
 #include <cassert>
-#include <cmath>
 #include <cstddef>
 #include <cstring>
 #include <iostream>
 #include <sstream>
 #include <utility>
+#include <string>
+#include <ostream>
+#include <cmath>
+#include <cstdlib>
+
+using std::modf;
+using std::abort;
+using std::strchr;
+using std::strlen;
+using std::wostream;
+using std::trunc;
+using std::truncf;
+
 
 // Provide implementation equivalent of std::snprintf for older _MSC compilers
 #if defined(_MSC_VER) && _MSC_VER < 1900

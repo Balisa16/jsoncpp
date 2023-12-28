@@ -99,8 +99,8 @@ extern JSON_API int msvc_pre1900_c99_snprintf(char* outBuf, size_t size,
 
 #if !defined(JSON_IS_AMALGAMATION)
 
-#include "allocator.h"
-#include "version.h"
+#include "allocator.hpp"
+#include "version.hpp"
 
 #endif // if !defined(JSON_IS_AMALGAMATION)
 

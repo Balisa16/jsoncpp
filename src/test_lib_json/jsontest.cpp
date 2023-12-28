@@ -4,7 +4,7 @@
 // See file LICENSE for detail or copy at http://jsoncpp.sourceforge.net/LICENSE
 
 #define _CRT_SECURE_NO_WARNINGS 1 // Prevents deprecation warning with MSVC
-#include "jsontest.h"
+#include <jsontest.hpp>
 #include <cstdio>
 #include <string>
 

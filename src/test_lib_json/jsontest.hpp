@@ -9,9 +9,9 @@
 #include <cstdio>
 #include <deque>
 #include <iomanip>
-#include <json/config.h>
-#include <json/value.h>
-#include <json/writer.h>
+#include <config.hpp>
+#include <value.hpp>
+#include <writer.hpp>
 #include <sstream>
 #include <string>
 

@@ -7,8 +7,8 @@
 #define JSON_READER_H_INCLUDED
 
 #if !defined(JSON_IS_AMALGAMATION)
-#include "json_features.h"
-#include "value.h"
+#include <features.hpp>
+#include <value.hpp>
 #endif // if !defined(JSON_IS_AMALGAMATION)
 #include <deque>
 #include <iosfwd>

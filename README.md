@@ -1,6 +1,6 @@
 # JSON-Thirdparty
 
-Focusing on used for cmake thirdparty in project. And removing unused items in C++ project.
+Focusing on used for cmake as thirdparty in project. And removing unused items in C++ project.
 <br>
 Forked from [JsonCpp](https://github.com/open-source-parsers/jsoncpp.git) project.
 

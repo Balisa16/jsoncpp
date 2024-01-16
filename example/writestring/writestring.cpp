@@ -1,4 +1,4 @@
-#include <jsoncpp/json/json.h>
+#include <json.hpp>
 #include <iostream>
 /** \brief Write a Value object to a string.
  * Example Usage:
@@ -12,7 +12,8 @@
  *     }
  * }
  */
-int main() {
+int main()
+{
   Json::Value root;
   Json::Value data;
   constexpr bool shouldUseOldWay = false;
@@ -20,11 +21,14 @@ int main() {
   data["number"] = 1;
   root["data"] = data;
 
-  if (shouldUseOldWay) {
+  if (shouldUseOldWay)
+  {
     Json::FastWriter writer;
     const std::string json_file = writer.write(root);
     std::cout << json_file << std::endl;
-  } else {
+  }
+  else
+  {
     Json::StreamWriterBuilder builder;
     const std::string json_file = Json::writeString(builder, root);
     std::cout << json_file << std::endl;

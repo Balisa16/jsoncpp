@@ -1,4 +1,4 @@
-#include <jsoncpp/json/json.h>
+#include <json.hpp>
 #include <iostream>
 #include <memory>
 /** \brief Write the Value object to a stream.
@@ -10,7 +10,8 @@
  *     "Name" : "robin"
  * }
  */
-int main() {
+int main()
+{
   Json::Value root;
   Json::StreamWriterBuilder builder;
   const std::unique_ptr<Json::StreamWriter> writer(builder.newStreamWriter());

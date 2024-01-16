@@ -10,33 +10,34 @@
 #include <config.hpp>
 #endif // if !defined(JSON_IS_AMALGAMATION)
 
-namespace Json {
+namespace Json
+{
 
-// writer.h
-class StreamWriter;
-class StreamWriterBuilder;
-class Writer;
-class FastWriter;
-class StyledWriter;
-class StyledStreamWriter;
+    // writer.h
+    class StreamWriter;
+    class StreamWriterBuilder;
+    class Writer;
+    class FastWriter;
+    class StyledWriter;
+    class StyledStreamWriter;
 
-// reader.h
-class Reader;
-class CharReader;
-class CharReaderBuilder;
+    // reader.h
+    class Reader;
+    class CharReader;
+    class CharReaderBuilder;
 
-// json_features.h
-class Features;
+    // json_features.h
+    class Features;
 
-// value.h
-using ArrayIndex = unsigned int;
-class StaticString;
-class Path;
-class PathArgument;
-class Value;
-class ValueIteratorBase;
-class ValueIterator;
-class ValueConstIterator;
+    // value.h
+    using ArrayIndex = unsigned int;
+    class StaticString;
+    class Path;
+    class PathArgument;
+    class Value;
+    class ValueIteratorBase;
+    class ValueIterator;
+    class ValueConstIterator;
 
 } // namespace Json
 

@@ -1,4 +1,4 @@
-#include <jsoncpp/json/json.h>
+#include <json.hpp>
 #include <fstream>
 #include <iostream>
 /** \brief Parse from stream, collect comments and capture error info.
@@ -13,7 +13,9 @@
  * // comment after
  * // comment tail
  */
-int main(int argc, char* argv[]) {
+
+int main(int argc, char *argv[])
+{
   Json::Value root;
   std::ifstream ifs;
   ifs.open(argv[1]);
@@ -21,7 +23,8 @@ int main(int argc, char* argv[]) {
   Json::CharReaderBuilder builder;
   builder["collectComments"] = true;
   JSONCPP_STRING errs;
-  if (!parseFromStream(builder, ifs, &root, &errs)) {
+  if (!parseFromStream(builder, ifs, &root, &errs))
+  {
     std::cout << errs << std::endl;
     return EXIT_FAILURE;
   }

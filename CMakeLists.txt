@@ -6,47 +6,27 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Ensure that CMAKE_BUILD_TYPE has a value specified for single configuration generators.
-if(NOT DEFINED CMAKE_BUILD_TYPE AND NOT DEFINED CMAKE_CONFIGURATION_TYPES)
-    set(CMAKE_BUILD_TYPE Release CACHE STRING
-        "Choose the type of build, options are: None Debug Release RelWithDebInfo MinSizeRel Coverage.")
-endif()
+project(jsoncpp VERSION 0.1.0)
 
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+include_directories(include)
 
-# ---------------------------------------------------------------------------
-# use ccache if found, has to be done before project()
-# ---------------------------------------------------------------------------
+# set runtime path
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/release/bin)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/release/lib)
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/release/lib)
 
-project(jsoncpp
-        LANGUAGES CXX)
-
-set(PROJECT_SOVERSION 25)
-
-include_directories(${PROJECT_SOURCE_DIR}/include)
+# set .so file location
 
 add_library(${PROJECT_NAME} SHARED
-    lib/json_value.cc
     lib/json_reader.cc
+    lib/json_value.cc
     lib/json_writer.cc)
 
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/release)
 
-add_executable(test_strunner src/jsontestrunner/main.cpp)
-target_link_libraries(test_strunner PUBLIC ${PROJECT_NAME})
-
-
-set(INSTALL_LIB_DIR lib CACHE PATH "/usr/local/lib")
-set(INSTALL_INCLUDE_DIR include CACHE PATH "/usr/local/include")
-
-# Install the library
+## add install
 install(TARGETS ${PROJECT_NAME}
-        EXPORT JSONCPPTargets
-        ARCHIVE DESTINATION ${INSTALL_LIB_DIR}
-)
+    RUNTIME DESTINATION bin
+    LIBRARY DESTINATION lib
+    ARCHIVE DESTINATION lib)
 
-file(GLOB HEADER_FILES ${PROJECT_SOURCE_DIR}/include/*.hpp)
-# Install the header files
-install(FILES ${HEADER_FILES}
-        DESTINATION ${INSTALL_INCLUDE_DIR}/jsoncpp
-)
+add_subdirectory(example)

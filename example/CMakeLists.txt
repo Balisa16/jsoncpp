@@ -1,9 +1,9 @@
 #vim: et ts =4 sts = 4 sw = 4 tw = 0
 set(EXAMPLES
-    readFromString
-    readFromStream
-    stringWrite
-    streamWrite
+    readstring
+    readstream
+    writestring
+    writestream
 )
 add_definitions(-D_GLIBCXX_USE_CXX11_ABI)
 
@@ -20,8 +20,6 @@ endif()
 
 foreach(example ${EXAMPLES})
     add_executable(${example} ${example}/${example}.cpp)
-    target_include_directories(${example} PUBLIC ${CMAKE_SOURCE_DIR}/include)
-    target_link_libraries(${example} jsoncpp_lib)
+    target_include_directories(${example} PUBLIC ${CMAKE_SOURCE_DIR}/include ${CMAKE_SOURCE_DIR}/lib)
+    target_link_libraries(${example}  PUBLIC ${PROJECT_NAME})
 endforeach()
-
-add_custom_target(examples ALL DEPENDS ${EXAMPLES})

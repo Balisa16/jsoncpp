@@ -14,7 +14,7 @@
  * // comment tail
  */
 
-int main(int argc, char *argv[])
+int main([[maybe_unused]]int argc, char *argv[])
 {
   Json::Value root;
   std::ifstream ifs;

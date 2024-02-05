@@ -26,7 +26,7 @@ set(INSTALL_INCLUDE_DIR include CACHE PATH "/usr/local/include")
 
 # Install the library
 install(TARGETS ${PROJECT_NAME}
-        EXPORT JSONCPPTargets
+        # EXPORT JSONCPPTargets
         ARCHIVE DESTINATION ${INSTALL_LIB_DIR}
 )
 
